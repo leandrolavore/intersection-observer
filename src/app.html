@@ -1,0 +1,28 @@
+<template>
+  <style>
+    ul{
+      border: 1px solid blue;
+      border-radius: 10px;
+      width: 10em;
+      height: 10em;
+      overflow: scroll;
+      list-style: none;
+      padding: 5px;
+    }
+    li{
+      border-bottom: 0.5px solid grey;
+    }
+
+  </style>
+
+  <h1>${message}</h1>
+  <div >
+    <button click.trigger="setIntersection()">Set Intersection</button>
+    <button click.trigger="seePeople()">See people</button>
+    <ul class="rootUl">
+      <li repeat.for="person of people" class="${$last ? ' last' : ''}">
+        <p>${person.name}</p>
+      </li>
+    </ul>
+  </div>
+</template>
